@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+               
+<head>
+               <link rel="shortcut 
+                     " href="img/logo.jpg">
+               
+               <link rel="stylesheet" type="text/css" href="css/cssReset.css" />
+               <link rel="stylesheet" type="text/css" href="css/footer-public.css" />
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/css/swiper.css">
+               <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/js/swiper.js"></script>
+               <link rel="stylesheet" href="css/occupational.css" />
+               <script src="js/jquery.js"></script>
+               <meta charset="UTF-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge">
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               <title>Document</title>
+</head>
+<body>
+               <div id="occupational-page" class="content">
+                              <div class="head"></div>
+                              <div class="describe"></div>
+                              <div class="course">
+                                             <p class="course-title">Related courses</p>
+                                             <ul class="course-list">
+                                                            
+                                             </ul>
+                              </div>
+               </div>
+</body>
+<script>
+function getURLParam(){
+
+ 
+  	var search=location.search;	//获取location的search属性，保存在search中
+  	var params={};		//创建空对象params
+  	if(search!=""){		//如果search不是空字符串
+      		search.slice(1).split("&").forEach(	//?username=zhangdong&pwd=123456;//search去开头?，按&切割为数组，forEach
+      			function(val){
+        			var arr=val.split("=");		//将当前元素值按=切割，保存在arr中
+          			params[arr[0]]=arr[1];		//向params中添加一个元素,属性名为arr[0],值为arr[1]
+      			}
+      		);
+   	}
+    	return params;		//返回params
+}
+console.log(getURLParam())
+function renderOcupationPageBlock(dataList){
+               console.log(dataList)
+            for(var i=0;i<dataList.length;i++){
+                           if(dataList[i].course_name === null){
+                              $(".course-list").append(`<text class='course-list-item'>暂无内容</text>`)  
+                                          break;
+                           }
+                var renderHtml = `<a class="course-list-item" href="course.html?id=${dataList[i].id}">${dataList[i].course_name}</a>`;
+            $(".course-list").append(renderHtml)  
+            }
+            $("#occupational-page .head").text(dataList[0].occupation_name)
+            $("#occupational-page .describe").text(dataList[0].occupation_introduction)
+
+}
+$.ajax({
+    url:'http://172.16.2.118:8111/getOcupationalById',
+						data:getURLParam(),
+						type:'post',
+						success:function (result,status,xhr){
+							renderOcupationPageBlock(result)
+						}
+					})
+</script>
+</html>

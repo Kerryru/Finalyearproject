@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+    <link rel="shortcut icon" href="img/logo.jpg" />
+    <link rel="stylesheet" href="css/cssReset.css" />
+    <link rel="stylesheet" href="css/public.css" />
+</head>
+
+<body>
+    <div class="wriper">
+        <div class="head">
+            <a href="index.html"><img src="img/logo.jpg"></a>
+        </div>
+        <div class="main">
+            <div class="panel">
+                <div class="login">
+                    <div class="title">
+                        <li>
+                            <h1 class="active id">Account Login</h1>
+                        </li>
+                        <!-- <li>
+                            <h1 class="Code">Scan code to login</h1>
+                        </li> -->
+                    </div>
+                    <div class="form">
+                        <form class="login-main" onsubmit="return false">
+                            <p>
+                                <input type="text" class="user-inp" name="username" required="required" placeholder="Email/Mobile Number/ID" />
+                                <span class="username-tip">* Enter a 6-13 digit underscore username</span>
+                            </p>
+                            <p>
+                                <input type="password" class="pwd-inp" name="password" required="required" placeholder="Password" />
+                                <span class="password-tip">* Enter a 6-13 digit underscore password</span>
+                            </p>
+                            <p><input type="text" class="code" name="code" required="required" placeholder="Please enter the verification code"><span class="_code">&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+                            <p class="tip"><span>* The username or password you entered is incorrect, please re-enter!</span></p>
+                            <button class="loginBtn">Login</button>
+                        </form>
+                        <div class="other-panel">
+                            <!-- <a href="#"><span class="tellogin">Mobile SMS login/registration</span></a> -->
+                            <p class="link">
+                                <a href="register.html"><span>Register Now</span></a>
+                                <span>|</span>
+                                <!-- <a href="register.html"><span>Forgot your password?</span></a> -->
+                            </p>
+                        </div>
+                        <!-- <div class="other-login">
+                            <div class="other-title">
+                                <hr style="width: 100%">
+                                <span class="other">Other ways to log in</span>
+                            </div>
+                            <div class="icon">
+                                <a href="#"><i class="qq"></i></a>
+                                <a href="#" class="weibo"><i></i></a>
+                                <a href="#" class="zhifubao"><i></i></a>
+                                <a href="#" class="weixin"><i></i></a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="Codepanel">
+                        <div class="getCode">
+                            <img src="img/code.png" alt="">
+                        </div>
+                        <p>use<font style="color: coral">APP</font>Swipe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="language">
+                <li><a href="#">Simplified Chinese</a></li>
+                <li><a href="#">Traditional Chinese</a></li>
+                <li><a href="#">English</a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/Ajax.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+		login.init();</script>
+</body>
+
+</html>

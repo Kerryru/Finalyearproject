@@ -1,0 +1,17 @@
+#forum-title{
+               font-size: 40px;
+               font-weight: 400;
+               text-align: center;
+               line-height: 80px;
+}
+#comment{
+               width: 400px;
+               margin: 0 auto;
+}
+#comment-content{
+               height: 500px;
+               overflow: scroll;
+}
+#user-tec{
+               color:orange
+}

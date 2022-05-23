@@ -1,0 +1,41 @@
+body{
+               background: rgb(245, 245, 245);
+}
+.content{
+               margin: 0 200px;
+               padding: 50px 200px;
+               margin-top: 50px;
+               background: #ffff;
+
+}
+.head{
+               font-size: 34px;
+               line-height: 1.15;
+               font-weight: 400;
+               vertical-align: sub;
+}
+.describe{
+               margin-top: 20px;
+
+}
+.course{
+               margin-top: 40px;
+}
+.course-title{
+
+               font-size: 24px;
+               font-weight: 400;  
+}
+.forum-list{
+               margin-top: 10px;
+               display: flex;   
+               
+               justify-content: center;
+               align-items: center;
+}
+.course-list-item{
+               margin-right: 30px;
+               margin-left: 30px;
+               
+               
+}
